@@ -10,9 +10,27 @@ $border-width-l: 30px;
 // Border-radius
 $border-radius-l: 40px;
 
-// Padding
-$padding-default: 15px 0;
+// Space
+$space-xxxs: 2px !default;
+$space-xxs: 4px !default;
+$space-xs: 8px !default;
+$space-s: 12px !default;
+$space-m: 16px !default;
+$space-l: 24px !default;
+$space-xl: 32px !default;
+$space-xxl: 48px !default;
+$space-xxxl: 64px !default;
 
-// Font-size
+// Font sizes
+$size-36: 2.25rem;
+$size-30: 1.875rem;
+$size-27: 1.6875rem;
+$size-25: 1.563rem;
+$size-24: 1.5rem;
+$size-21: 1.3125rem;
 $size-18: 1.125rem;
 $size-16: 1rem;
+$size-14: 0.875rem;
+$size-12: 0.75rem;
+
+// Margin

@@ -1,0 +1,23 @@
+@use './src/styles/variables';
+
+:host {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  margin: 0 0 variables.$space-m;
+}
+
+.text-medium {
+  font-size: variables.$size-16;
+  line-height: variables.$size-24;
+}
+
+.text-big {
+  font-size: variables.$size-18;
+  line-height: variables.$size-27;
+}

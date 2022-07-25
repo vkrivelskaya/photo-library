@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { dictionary } from '../constants/dictionary';
+import { dictionary } from '../../constants/dictionary';
 
 @Component({
   selector: 'app-header',

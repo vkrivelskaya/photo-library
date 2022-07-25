@@ -1,10 +1,10 @@
-@use '../../../styles/variables';
+@use '../../../../styles/variables';
 
 .header {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: variables.$padding-default;
+  padding: variables.$space-m 0;
   border: variables.$border-width-xs solid variables.$black;
   font-size: variables.$size-18;
 }
