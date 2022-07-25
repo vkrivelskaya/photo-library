@@ -1,0 +1,8 @@
+@use '../styles/variables';
+
+:host {
+  display: block;
+  height: 100%;
+  border: variables.$border-width-l solid variables.$grayish-red;
+  border-radius: variables.$border-radius-l;
+}

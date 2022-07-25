@@ -1,0 +1,15 @@
+@use '../../../styles/variables';
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: variables.$padding-default;
+  border: variables.$border-width-xs solid variables.$black;
+  font-size: variables.$size-18;
+}
+.buttons-container {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+}
