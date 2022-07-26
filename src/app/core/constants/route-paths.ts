@@ -1,6 +1,6 @@
 export const routePath = {
   landing: '',
   photos: 'photos',
-  favorites: 'favorites ',
+  favorites: 'favorites',
   notFound: '404',
 };

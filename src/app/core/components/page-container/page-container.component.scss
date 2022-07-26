@@ -1,0 +1,14 @@
+@use './src/styles/variables';
+
+.main-content {
+  display: block;
+  overflow-y: scroll;
+  padding: variables.$space-m variables.$space-m;
+  height: 90%;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}

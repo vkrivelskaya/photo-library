@@ -7,5 +7,5 @@ import { dictionary } from '../../core/constants/dictionary';
   styleUrls: ['./entry.component.scss'],
 })
 export class EntryComponent {
-  dictionary = dictionary;
+  public dictionary = dictionary;
 }

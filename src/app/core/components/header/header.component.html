@@ -1,6 +1,6 @@
 <header class="header">
   <div class="buttons-container">
-    <button mat-stroked-button>{{ dictionary['photos'] }}</button>
-    <button mat-stroked-button>{{ dictionary['favorites'] }}</button>
+    <button mat-stroked-button [disabled]="isPhotoListActive">{{ dictionary['photos'] }}</button>
+    <button mat-stroked-button [disabled]="isFavouritesListActive">{{ dictionary['favorites'] }}</button>
   </div>
 </header>

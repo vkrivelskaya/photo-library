@@ -22,6 +22,8 @@
     "@angular/platform-browser": "^14.1.0",
     "@angular/platform-browser-dynamic": "^14.1.0",
     "@angular/router": "^14.1.0",
+    "@ngrx/effects": "^14.0.2",
+    "@ngrx/store": "^14.0.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -48,7 +50,8 @@
     "karma-jasmine-html-reporter": "~2.0.0",
     "lint-staged": "^13.0.3",
     "prettier": "2.7.1",
-    "typescript": "~4.7.2"
+    "typescript": "~4.7.2",
+    "@ngrx/eslint-plugin": "^14.0.2"
   },
   "husky": {
     "hooks": {

@@ -5,10 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { PhotosEffects } from './store/effects/photos.effect';
+import { photosReducer } from './store/reducers/photos.reducer';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, CoreModule, BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    CoreModule,
+    BrowserAnimationsModule,
+    StoreModule.forRoot({ photos: photosReducer }, {}),
+    EffectsModule.forRoot([PhotosEffects]),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
