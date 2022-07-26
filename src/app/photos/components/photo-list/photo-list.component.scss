@@ -1,9 +1,5 @@
-//:host {
-//  display: block;
-//  height: 110%;
-//}
-//
-//.tile-image {
-//  width: 100%;
-//  height: auto;
-//}
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 150%;
+}

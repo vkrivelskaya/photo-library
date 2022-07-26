@@ -1,0 +1,18 @@
+@use './src/styles/variables';
+
+:host {
+  align-self: center;
+  margin-top: variables.$size-21;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  border-radius: 50%;
+  font-size: variables.$size-16;
+  color: variables.$dark-grey;
+  text-align: center;
+  background: variables.$white;
+  border: variables.$border-width-xs solid variables.$dark-grey;
+}

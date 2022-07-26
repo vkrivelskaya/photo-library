@@ -1,1 +1,2 @@
 <app-photos-list [photos$]="photos$" (photoClicked)="onPhotoClick($event)"></app-photos-list>
+<app-loading *ngIf="isLoading$ | async"></app-loading>

@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { PhotoState } from '../../../store/reducers/photos.reducer';
 import * as PhotosActions from '../../../store/actions/photos.actions';
 import * as FavoritesPhotosActions from '../../../store/actions/favorites.actions';
-import { selectPhotosAll } from '../../../store/selectors/photo.selector';
+import { selectPhotosAll, selectPhotosPending } from '../../../store/selectors/photo.selector';
 import { Photo } from '../../../core/models/photo';
 import { FavoritesState } from '../../../store/reducers/favorites.reducer';
 
@@ -14,6 +14,8 @@ import { FavoritesState } from '../../../store/reducers/favorites.reducer';
 })
 export class PhotoListComponent implements OnInit {
   public photos$ = this.photosStore.select<Photo[]>(selectPhotosAll);
+  public isLoading$ = this.photosStore.select<boolean>(selectPhotosPending);
+
   private limit = 6;
 
   constructor(private photosStore: Store<{ photos: PhotoState }>, private favoritesStore: Store<{ favoritesPhotos: FavoritesState }>) {}

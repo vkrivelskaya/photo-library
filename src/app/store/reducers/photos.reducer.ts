@@ -23,6 +23,13 @@ export const photosReducers = createReducer(
       images: [],
     };
   }),
+  on(PhotosActions.AddImages, state => {
+    return {
+      ...state,
+      pending: true,
+      images: [...state.images],
+    };
+  }),
   on(PhotosActions.ImagesLoaded, (state, { imageResponse }) => {
     return {
       ...state,

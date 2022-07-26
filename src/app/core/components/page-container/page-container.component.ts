@@ -10,7 +10,7 @@ import * as PhotosActions from '../../../store/actions/photos.actions';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PageContainerComponent {
-  private limit = 6;
+  private limit = 3;
 
   constructor(private store: Store<{ photos: PhotoState }>) {}
 
