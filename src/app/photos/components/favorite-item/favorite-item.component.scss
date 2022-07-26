@@ -1,0 +1,6 @@
+@use './src/styles/variables';
+
+.remove-button {
+  width: fit-content;
+  margin-top: variables.$space-l;
+}

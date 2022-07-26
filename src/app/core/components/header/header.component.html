@@ -1,6 +1,10 @@
 <header class="header">
   <div class="buttons-container">
-    <button mat-stroked-button [disabled]="isPhotoListActive">{{ dictionary['photos'] }}</button>
-    <button mat-stroked-button [disabled]="isFavouritesListActive">{{ dictionary['favorites'] }}</button>
+    <button mat-stroked-button>
+      <a [routerLink]="routePath['photos']" routerLinkActive="active-link">{{ dictionary['photos'] }}</a>
+    </button>
+    <button mat-stroked-button>
+      <a [routerLink]="routePath['favorites']" routerLinkActive="active-link">{{ dictionary['favorites'] }}</a>
+    </button>
   </div>
 </header>

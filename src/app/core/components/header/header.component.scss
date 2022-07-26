@@ -13,3 +13,11 @@
   display: flex;
   justify-content: space-between;
 }
+
+.active-link {
+  color: variables.$pale-red;
+}
+
+a:link {
+  text-decoration: none;
+}

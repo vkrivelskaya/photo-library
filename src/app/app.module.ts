@@ -9,6 +9,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { PhotosEffects } from './store/effects/photos.effect';
 import { photosReducer } from './store/reducers/photos.reducer';
+import { favoritesPhotoReducer } from './store/reducers/favorites.reducer';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +18,7 @@ import { photosReducer } from './store/reducers/photos.reducer';
     AppRoutingModule,
     CoreModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot({ photos: photosReducer }, {}),
+    StoreModule.forRoot({ photos: photosReducer, favoritesPhotos: favoritesPhotoReducer }, {}),
     EffectsModule.forRoot([PhotosEffects]),
   ],
   providers: [],
