@@ -87,7 +87,7 @@ describe('FavoriteItemComponent', () => {
   });
 
   it('should dispatch addFavorites action after remove item', () => {
-    const storeSpy = spyOn(component.favoritesStore, 'dispatch').and.callThrough();
+    const storeSpy = spyOn(component.store, 'dispatch').and.callThrough();
     component.onRemoveButtonClick();
     fixture.detectChanges();
     expect(storeSpy).toHaveBeenCalledTimes(1);

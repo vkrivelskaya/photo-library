@@ -15,10 +15,10 @@ export class FavoriteItemComponent {
   public dictionary = dictionary;
   public photo = this.route.snapshot.data['0'];
 
-  constructor(private route: ActivatedRoute, private router: Router, public favoritesStore: Store<{ favoritesPhotos: FavoritesState }>) {}
+  constructor(private route: ActivatedRoute, private router: Router, public store: Store<{ favoritesPhotos: FavoritesState }>) {}
 
   public onRemoveButtonClick(): void {
-    this.favoritesStore.dispatch(FavoritesPhotosActions.RemoveFavoritePhoto({ photo: this.photo }));
+    this.store.dispatch(FavoritesPhotosActions.RemoveFavoritePhoto({ photo: this.photo }));
     this.router.navigate(['favorites']);
   }
 }
