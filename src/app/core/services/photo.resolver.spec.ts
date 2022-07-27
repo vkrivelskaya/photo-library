@@ -1,8 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 
-import { PhotoResolver } from './photo-resolver.resolver';
+import { PhotoResolver } from './photo.resolver';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { Photo } from '../models/photo';
+import { ActivatedRoute, convertToParamMap } from '@angular/router';
+import { of } from 'rxjs';
 
 const initialState = {
   images: [
@@ -29,6 +31,7 @@ const initialState = {
 
 describe('PhotoResolverResolver', () => {
   let resolver: PhotoResolver;
+  let route: ActivatedRoute;
   let store: MockStore<{
     images: Photo[];
     selectedPhoto: Photo | undefined;
@@ -36,12 +39,26 @@ describe('PhotoResolverResolver', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [provideMockStore({ initialState })],
+      providers: [
+        provideMockStore({ initialState }),
+        {
+          provide: ActivatedRoute,
+          useValue: { snapshot: { paramMap: convertToParamMap({ id: 'dhl' }) } },
+        },
+      ],
     });
     resolver = TestBed.inject(PhotoResolver);
+    store = TestBed.inject(MockStore);
+    route = TestBed.inject(ActivatedRoute);
   });
 
   it('should be created', () => {
     expect(resolver).toBeTruthy();
+  });
+
+  it('should dispatch action ', () => {
+    const storeSpy = spyOn(resolver.store, 'dispatch').and.callThrough();
+    resolver.resolve(route.snapshot);
+    expect(storeSpy).toHaveBeenCalledTimes(1);
   });
 });

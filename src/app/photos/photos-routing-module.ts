@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { PhotoListComponent } from './components/photo-list/photo-list.component';
 import { routePath } from '../core/constants/route-paths';
 import { FavoriteItemComponent } from './components/favorite-item/favorite-item.component';
-import { PhotoResolver } from '../core/services/photo-resolver.resolver';
+import { PhotoResolver } from '../core/services/photo.resolver';
 
 const routes: Routes = [
   {

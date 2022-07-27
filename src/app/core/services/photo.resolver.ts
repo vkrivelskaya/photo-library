@@ -12,7 +12,7 @@ import { selectSelectedFavoritesPhotosAll } from '../../store/selectors/favorite
   providedIn: 'root',
 })
 export class PhotoResolver implements Resolve<Photo> {
-  constructor(private store: Store<{ favoritesPhotos: FavoritesState }>, private actionListener$: ActionsSubject) {}
+  constructor(public store: Store<{ favoritesPhotos: FavoritesState }>, private actionListener$: ActionsSubject) {}
 
   public resolve(route: ActivatedRouteSnapshot): Observable<Photo> {
     this.store.dispatch(FavoritesPhotosActions.GetFavoritePhoto({ id: route.paramMap.get('id')! }));
