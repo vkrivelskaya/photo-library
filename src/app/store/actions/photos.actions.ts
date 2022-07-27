@@ -9,9 +9,6 @@ export enum PhotosActionsTypes {
 }
 
 export const GetImages = createAction(PhotosActionsTypes.GET_IMAGES, props<{ limit: number }>());
-
 export const AddImages = createAction(PhotosActionsTypes.ADD_IMAGES, props<{ limit: number }>());
-
 export const ImagesLoaded = createAction(PhotosActionsTypes.IMAGES_LOADED, props<{ imageResponse: Photo[] }>());
-
 export const ImagesAdded = createAction(PhotosActionsTypes.IMAGES_ADDED, props<{ imageResponse: Photo[] }>());

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Photo } from '../../../core/models/photo';
 
@@ -6,6 +6,7 @@ import { Photo } from '../../../core/models/photo';
   selector: 'app-photos-list',
   templateUrl: './photos-list.component.html',
   styleUrls: ['./photos-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PhotosListComponent {
   @Input() public photos$!: Observable<Photo[]>;

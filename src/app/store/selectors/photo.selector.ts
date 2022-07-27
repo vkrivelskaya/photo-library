@@ -5,6 +5,6 @@ export interface AppState {
   photos: PhotoState;
 }
 
-export const selectPhotos = createFeatureSelector<AppState, PhotoState>('photos');
+export const selectPhotos = createFeatureSelector<PhotoState>('photos');
 export const selectPhotosAll = createSelector(selectPhotos, state => state.images);
 export const selectPhotosPending = createSelector(selectPhotos, state => state.pending);

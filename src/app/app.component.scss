@@ -3,6 +3,12 @@
 :host {
   display: block;
   height: 100%;
-  border: variables.$border-width-l solid variables.$grayish-red;
+  padding: variables.$space-xs;
+}
+
+.container {
+  height: 100%;
+  padding: variables.$space-xl;
+  background-color: variables.$grayish-red;
   border-radius: variables.$border-radius-l;
 }

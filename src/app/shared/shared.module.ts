@@ -5,9 +5,11 @@ import { PhotoItemComponent } from './components/photo-item/photo-item.component
 import { MatGridListModule } from '@angular/material/grid-list';
 import { LoadingComponent } from './components/loading/loading.component';
 
+const components = [PhotosListComponent, PhotoItemComponent, LoadingComponent];
+
 @NgModule({
-  declarations: [PhotosListComponent, PhotoItemComponent, LoadingComponent],
+  declarations: [...components],
   imports: [CommonModule, MatGridListModule],
-  exports: [PhotosListComponent, PhotoItemComponent, LoadingComponent],
+  exports: [...components],
 })
 export class SharedModule {}

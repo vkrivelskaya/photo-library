@@ -4,9 +4,10 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: variables.$space-m 0;
+  padding: variables.$space-l 0;
   border: variables.$border-width-xs solid variables.$black;
   font-size: variables.$size-18;
+  background-color: variables.$white;
 }
 .buttons-container {
   width: 40%;
@@ -20,4 +21,10 @@
 
 a:link {
   text-decoration: none;
+}
+
+button {
+  width: variables.$buttons-width;
+  padding: variables.$space-xs 0;
+  font-size: variables.$size-18;
 }
