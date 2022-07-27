@@ -4,13 +4,11 @@ import { Action, createReducer, on } from '@ngrx/store';
 
 export interface PhotoState {
   pending: boolean;
-  error: string;
   images: Photo[];
 }
 
 export const initialState: PhotoState = {
   pending: false,
-  error: '',
   images: [],
 };
 

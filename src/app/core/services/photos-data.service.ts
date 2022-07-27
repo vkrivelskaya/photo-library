@@ -13,7 +13,7 @@ export class PhotosDataService {
   constructor(private httpClient: HttpClient) {}
 
   public getImages(limit: string): Observable<Photo[]> {
-    const params = new HttpParams().set('limit', limit).set('mime_types', this.photoType);
+    const params = new HttpParams().set('limit', limit).set('mime_types', this.photoType).set('size', 'full');
     return this.httpClient.get<Photo[]>(this.photoEndpoint + '?' + params);
   }
 }

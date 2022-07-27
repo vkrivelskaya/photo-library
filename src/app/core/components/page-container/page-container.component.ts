@@ -12,13 +12,13 @@ import * as PhotosActions from '../../../store/actions/photos.actions';
 export class PageContainerComponent {
   private limit = 3;
 
-  constructor(private store: Store<{ photos: PhotoState }>) {}
+  constructor(public store: Store<{ photos: PhotoState }>) {}
 
   public onWindowScroll(): void {
     this.addImages();
   }
 
-  private addImages(): void {
+  public addImages(): void {
     this.store.dispatch(PhotosActions.AddImages({ limit: this.limit }));
   }
 }

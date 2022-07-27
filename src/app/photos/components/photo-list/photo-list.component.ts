@@ -18,7 +18,7 @@ export class PhotoListComponent implements OnInit {
 
   private limit = 6;
 
-  constructor(private photosStore: Store<{ photos: PhotoState }>, private favoritesStore: Store<{ favoritesPhotos: FavoritesState }>) {}
+  constructor(public photosStore: Store<{ photos: PhotoState }>, public favoritesStore: Store<{ favoritesPhotos: FavoritesState }>) {}
 
   public ngOnInit(): void {
     this.loadImages();
@@ -28,7 +28,7 @@ export class PhotoListComponent implements OnInit {
     this.favoritesStore.dispatch(FavoritesPhotosActions.AddFavoritePhoto({ photo: photo }));
   }
 
-  private loadImages(): void {
+  public loadImages(): void {
     this.photosStore.dispatch(PhotosActions.GetImages({ limit: this.limit }));
   }
 }
