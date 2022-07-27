@@ -4,17 +4,21 @@ import { PhotoResolver } from './photo.resolver';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { Photo } from '../models/photo';
 import { ActivatedRoute, convertToParamMap } from '@angular/router';
-import { of } from 'rxjs';
+import { MemoizedSelector } from '@ngrx/store';
+import { selectSelectedFavoritesPhotosAll } from '../../store/selectors/favorites.selector';
+import { FavoritesState } from '../../store/reducers/favorites.reducer';
 
 const initialState = {
   images: [
     {
+      breeds: [],
       id: 'Q_iJiVROn',
       url: 'https://cdn2.thecatapi.com/images/Q_iJiVROn.jpg',
       width: 3024,
       height: 3780,
     },
     {
+      breeds: [],
       height: 600,
       id: 'dhl',
       url: 'https://cdn2.thecatapi.com/images/dhl.jpg',
@@ -22,6 +26,7 @@ const initialState = {
     },
   ],
   selectedPhoto: {
+    breeds: [],
     height: 600,
     id: 'dhl',
     url: 'https://cdn2.thecatapi.com/images/dhl.jpg',
@@ -36,6 +41,7 @@ describe('PhotoResolverResolver', () => {
     images: Photo[];
     selectedPhoto: Photo | undefined;
   }>;
+  let mockPhotoSelector: MemoizedSelector<FavoritesState, Photo>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -49,6 +55,7 @@ describe('PhotoResolverResolver', () => {
     });
     resolver = TestBed.inject(PhotoResolver);
     store = TestBed.inject(MockStore);
+
     route = TestBed.inject(ActivatedRoute);
   });
 
@@ -60,5 +67,14 @@ describe('PhotoResolverResolver', () => {
     const storeSpy = spyOn(resolver.store, 'dispatch').and.callThrough();
     resolver.resolve(route.snapshot);
     expect(storeSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('should return photo', () => {
+    mockPhotoSelector = store.overrideSelector(selectSelectedFavoritesPhotosAll, initialState.images[1]);
+    store.refreshState();
+    const resolved = resolver.resolve(route.snapshot);
+    resolved.subscribe(val => {
+      expect(val).toEqual(initialState.images[1]);
+    });
   });
 });
