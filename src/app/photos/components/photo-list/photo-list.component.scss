@@ -1,6 +1,7 @@
+@use './src/styles/mixines';
+
 :host {
-  display: flex;
-  flex-direction: column;
+  @include mixines.flex;
   height: 150%;
 }
 
